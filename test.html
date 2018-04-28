@@ -1,0 +1,23 @@
+<script type="text/javascript">
+function tryFunction(name, value) {
+	try {
+		Function(value);
+		document.write("+");
+	} catch (why) {
+		document.write("-");
+	}
+	document.write(name + "<br />");
+}
+
+tryFunction('generator', 'function* g(){}');
+tryFunction('async', 'async function f(){}');
+tryFunction('async generator', 'async function* fg(){}');
+
+function tryReference(name) {
+	document.write((window[name] ? '+' : '-') + name + "<br />");
+}
+tryReference('visualViewport');
+tryReference('DataTransferItem');
+tryReference('DataTransferItemList');
+tryReference('BroadcastChannel');
+</script>
