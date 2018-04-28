@@ -9,15 +9,15 @@ function tryFunction(name, value) {
 	document.write(name + "<br />");
 }
 
-tryFunction('generator', 'function* g(){}');
-tryFunction('async', 'async function f(){}');
-tryFunction('async generator', 'async function* fg(){}');
+tryFunction('GeneratorFunction', 'function* g(){}');
+tryFunction('AsyncFunction', 'async function f(){}');
+tryFunction('AsyncGeneratorFunction', 'async function* fg(){}');
 
 function tryReference(name) {
 	document.write((window[name] ? '+' : '-') + name + "<br />");
 }
-tryReference('visualViewport');
 tryReference('DataTransferItem');
 tryReference('DataTransferItemList');
 tryReference('BroadcastChannel');
+tryReference('VisualViewport');
 </script>
