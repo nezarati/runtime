@@ -12,6 +12,7 @@ function tryFunction(name, value) {
 tryFunction('GeneratorFunction', 'function* g(){}');
 tryFunction('AsyncFunction', 'async function f(){}');
 tryFunction('AsyncGeneratorFunction', 'async function* fg(){}');
+tryFunction('EventTarget.constructor', 'new EventTarget');
 
 function tryReference(name) {
 	document.write((window[name] ? '+' : '-') + name + "<br />");
