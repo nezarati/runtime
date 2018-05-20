@@ -7,19 +7,11 @@
 	"use strict";
 	var utilities = 
 	{
-		create : function(element)
+		create : function(value)
 		{
-			return document.createElement(element);
+			return document.createElement(value);
 		},
-		bool : function(name,bool)
-		{
-			if(bool)
-			{
-				return true;
-			}
-			return false;
-		},
-		function : function(name,value)
+		function : function(value)
 		{
 			try
 			{
@@ -31,9 +23,9 @@
 				return false;
 			}
 		},
-		reference : function(name)
+		reference : function(value)
 		{
-			if(window[name])
+			if(window[value])
 			{
 				return true;
 			}
@@ -42,10 +34,10 @@
 	};
 	var browser=
 	{
-		function_generator : utilities.function('GeneratorFunction','function* g(){}'),
-		function_async : utilities.function('AsyncFunction','async function f(){}'),
-		function_generator_async : utilities.function('AsyncGeneratorFunction','async function* fg(){}'),
-		event_target : utilities.function('EventTarget.constructor','new EventTarget'),
+		function_generator : utilities.function('function* g(){}'),
+		function_async : utilities.function('async function f(){}'),
+		function_generator_async : utilities.function('async function* fg(){}'),
+		event_target : utilities.function('new EventTarget'),
 		data_transfer_item : utilities.reference('DataTransferItem'),
 		data_transfer_item_list : utilities.reference('DataTransferItemList'),
 		broad_cast_channel : utilities.reference('BroadcastChannel'),
