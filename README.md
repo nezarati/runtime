@@ -2,7 +2,7 @@
 **a fast, tiny, simple browser feature detection**
 
 # How Works?
-open `demo.html` file on a browser.
+open `Demo.html` file on a browser.
 it's a demo file.
 
 # How to Use?
