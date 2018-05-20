@@ -6,6 +6,11 @@ open `Demo.html` file on a browser.
 it's a demo file.
 
 # How to Use?
+you can access to result of detect and check from variable.
+
+type of all variable is `bool`.
+
+list of variables : 
 
 - browser.function_generator
 - browser.function_async
