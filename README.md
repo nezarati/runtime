@@ -1,5 +1,5 @@
-# TinyFeature
-**a fast, tiny, simple browser feature detection**
+# Tiny Browser Feature
+a fast, tiny, simple browser feature detection.
 
 # How Works?
 open `Demo.html` file on a browser.
