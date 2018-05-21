@@ -28,6 +28,12 @@ list of variables :
 - browser.webgl
 
 
+# Future capabilities :
+- placeholder
+- canvas
+- querySelectorAll
+- More...
+
 
 # Demo :
     <script type="text/javascript" src="TinyFeature.js"></script>
