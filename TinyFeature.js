@@ -2,7 +2,7 @@
  * TinyFeature
  * a fast, tiny, simple browser feature detection.
 */
-;(function(window,document,undefined)
+;(function(window,document)
 {
 	"use strict";
 	var utilities = 
