@@ -14,7 +14,7 @@ tryFunction('AsyncFunction', 'async function f(){}');
 tryFunction('AsyncGeneratorFunction', 'async function* fg(){}');
 tryFunction('EventTarget.constructor', 'new EventTarget');
 tryFunction('BigInt', '1n');
-tryFunction('for await', 'for await (let item of []) {}');
+tryFunction('for await', 'async function f(){for await (let item of []) {}}');
 
 function tryReference(name) {
 	document.write((window[name] ? '+' : '-') + name + "<br />");
