@@ -25,6 +25,10 @@ tryReference('BroadcastChannel');
 tryReference('VisualViewport');
 tryReference('FontFace');
 tryReference('customElements');
+
+function tryFeature(name) {
+	document.write((Function(name)() ? '+' : '-') + name + "<br />");
+}
 tryReference('HTMLElement.prototype.animate');
 tryReference('HTMLElement.prototype.attributeStyleMap');
 tryReference('HTMLElement.prototype.computedStyleMap');
