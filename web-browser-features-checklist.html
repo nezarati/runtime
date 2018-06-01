@@ -27,10 +27,10 @@ tryReference('FontFace');
 tryReference('customElements');
 
 function tryFeature(name) {
-	document.write((Function(name)() ? '+' : '-') + name + "<br />");
+	document.write((Function(`return ${name}`)() ? '+' : '-') + name + "<br />");
 }
-tryReference('HTMLElement.prototype.animate');
-tryReference('HTMLElement.prototype.attributeStyleMap');
-tryReference('HTMLElement.prototype.computedStyleMap');
+tryFeature('HTMLElement.prototype.animate');
+tryFeature('HTMLElement.prototype.attributeStyleMap');
+tryFeature('HTMLElement.prototype.computedStyleMap');
 
 </script>
