@@ -26,11 +26,12 @@ tryReference('VisualViewport');
 tryReference('FontFace');
 tryReference('customElements');
 
-function tryFeature(name) {
-	document.write((Function(`return ${name}`)() ? '+' : '-') + name + "<br />");
+function tryFeature(name, value) {
+	document.write((value ? '+' : '-') + name + "<br />");
 }
-tryFeature('HTMLElement.prototype.animate');
-tryFeature('HTMLElement.prototype.attributeStyleMap');
-tryFeature('HTMLElement.prototype.computedStyleMap');
+let dummyElement = document.createElement('div');
+tryFeature('HTMLElement.prototype.animate', dummyElement.animate);
+tryFeature('HTMLElement.prototype.attributeStyleMap', dummyElement.attributeStyleMap);
+tryFeature('HTMLElement.prototype.computedStyleMap', dummyElement.computedStyleMap);
 
 </script>
