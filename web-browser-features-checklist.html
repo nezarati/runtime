@@ -15,6 +15,13 @@ tryFunction('AsyncGeneratorFunction', 'async function* fg(){}');
 tryFunction('EventTarget.constructor', 'new EventTarget');
 tryFunction('BigInt', '1n');
 tryFunction('for await', 'async function f(){for await (let item of []) {}}');
+tryFunction('Static class fields', 'class C {static name = "value"}');
+tryFunction('Dynamic class fields', 'class C {name = "value"}');
+tryFunction('Generator arrow functions', 'let g = () =>* {}');
+tryFunction('Decorators', `class C {
+	@bound render() {
+	}
+}`);
 
 function tryReference(name) {
 	document.write((window[name] ? '+' : '-') + name + "<br />");
@@ -33,5 +40,6 @@ let dummyElement = document.createElement('div');
 tryFeature('HTMLElement.prototype.animate', dummyElement.animate);
 tryFeature('HTMLElement.prototype.attributeStyleMap', dummyElement.attributeStyleMap);
 tryFeature('HTMLElement.prototype.computedStyleMap', dummyElement.computedStyleMap);
+tryFeature('Set.prototype.difference(iterable)', (new Set).difference);
 
 </script>
