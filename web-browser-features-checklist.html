@@ -42,5 +42,5 @@ tryFeature('HTMLElement.prototype.attributeStyleMap', dummyElement.attributeStyl
 tryFeature('HTMLElement.prototype.computedStyleMap', dummyElement.computedStyleMap);
 tryFeature('Set.prototype.difference(iterable)', (new Set).difference);
 
-tryFeature('HTMLScriptElement.prototype.noModule', document.createElement('script').noModule);
+tryFeature('HTMLScriptElement.prototype.noModule', document.createElement('script').noModule == false);
 </script>
