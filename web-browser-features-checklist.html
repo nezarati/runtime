@@ -1,12 +1,19 @@
 <script type="text/javascript">
+function unsupported(name, asserted = false) {
+	if (!asserted) {
+		document.write(`${name} is not supported.`);
+	}
+}
+
 function tryFunction(name, value) {
 	try {
 		Function(value);
-		document.write("+");
+		// document.write("+");
 	} catch (why) {
-		document.write("-");
+		// document.write("-");
+		unsupported(name);
 	}
-	document.write(name + "<br />");
+	// document.write(name + "<br />");
 }
 
 tryFunction('GeneratorFunction', 'function* g(){}');
@@ -18,13 +25,17 @@ tryFunction('for await', 'async function f(){for await (let item of []) {}}');
 tryFunction('Static class fields', 'class C {static name = "value"}');
 tryFunction('Dynamic class fields', 'class C {name = "value"}');
 tryFunction('Generator arrow functions', 'let g = () =>* {}');
+
+class bound {
+}
 tryFunction('Decorators', `class C {
 	@bound render() {
 	}
 }`);
 
 function tryReference(name) {
-	document.write((window[name] ? '+' : '-') + name + "<br />");
+	// document.write((window[name] ? '+' : '-') + name + "<br />");
+	unsupported(name, window[name]);
 }
 tryReference('DataTransferItem');
 tryReference('DataTransferItemList');
@@ -32,9 +43,12 @@ tryReference('BroadcastChannel');
 tryReference('VisualViewport');
 tryReference('FontFace');
 tryReference('customElements');
+tryReference('IntersectionObserver');
+tryReference('ResizeObserver');
 
 function tryFeature(name, value) {
-	document.write((value ? '+' : '-') + name + "<br />");
+	// document.write((value ? '+' : '-') + name + "<br />");
+	unsupported(name, value);
 }
 let dummyElement = document.createElement('div');
 tryFeature('HTMLElement.prototype.animate', dummyElement.animate);
